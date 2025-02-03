@@ -1,0 +1,1 @@
+echo $INPUT_WHOTOGREET
