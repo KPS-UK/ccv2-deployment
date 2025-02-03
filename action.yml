@@ -1,11 +1,20 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone'
+name: 'KPS CCv2 Action'
+description: 'Call the CCv2 API'
 inputs:
-  whotogreet:  # id of input
-    description: 'Who to greet'
+  step:
+    description: 'Step'
     required: true
-    default: 'World'
+    default: 'BUILD'
+  ccv2_environment:
+    description: 'Environment To Act Upon'
+    required: false
+  ccv2_subscription_id:
+    description: 'Subscription To Act Upon'
+    required: true  
+  ccv2_api_key:
+    description: 'API Key for CCv2'
+    required: true 
 runs:
   using: 'docker'
   image: 'Dockerfile'
