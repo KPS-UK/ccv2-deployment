@@ -79,6 +79,9 @@ inputs:
   host_alias_set:
     description: 'Path to host alias set'
     required: false
+  force_migration:
+    description: 'Should we system update regardless of file changes?'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
