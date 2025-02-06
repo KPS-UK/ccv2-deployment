@@ -55,6 +55,30 @@ inputs:
   debug :
     description: 'Set to axios to debug connection to CCv2 (optional)'
     required: false
+  jira_webhook:
+    description: 'Webhook for Jira automation (optional)'
+    required: false
+  path_to_environment_properties:
+    description: 'Path to environment specific properties (optional)'
+    required: false
+  version_property:
+    description: 'The property which contains the version, this will be appended by the SAP build code'
+    required: false
+  pre_alert:
+    description: 'Do you want an alert when the build starts as well as when the deployment starts?'
+    required: false
+  jmeter_test_package:
+    description: 'The name of the JMeter test package in CCv2'
+    required: false
+  static_files_config:
+    description: 'Path to properties file detailing static files'
+    required: false
+  redirect_config:
+    description: 'Path to properties file detailing redirects'
+    required: false
+  host_alias_set:
+    description: 'Path to host alias set'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
