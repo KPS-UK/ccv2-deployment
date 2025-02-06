@@ -15,6 +15,46 @@ inputs:
   ccv2_api_key:
     description: 'API Key for CCv2'
     required: true 
+  ccv2_api_timeout :
+    description: 'How long to wait for build/compile to finish (seconds)'
+    required: false
+    default: '1200'
+  ccv2_api_request_spacing :
+    description: 'Time between status calls to API (seconds)'
+    required: false
+    default: '30'
+  slack_webhooks :
+    description: 'Space-Separated list of Slack Webhooks to send alerts to  (optional)'
+    required: false
+  teams_webhooks :
+    description: 'Space-Separated list of Teams Webhook to send alerts to (optional)'
+    required: false
+  jira_prefix :
+    description: 'Prefix before ticket in Jira URL'
+    required: false
+  ccv2_deploy_strategy :
+    description: 'Deployment Strategy. Possible options are ROLLING_UPDATE and RECREATE. (defaults to RECREATE)'
+    required: false
+    default: 'RECREATE'
+  system_update_file_extensions :
+    description: 'File extensions (suffixes) which, if altered, trigger a System Update. (defaults to items.xml, groovy and impex)'
+    required: false
+    default: '-items.xml,.groovy,.impex'
+  ccv2_builds_limit :
+    description: 'Limit the number of builds returned when looking for existing builds to deploy'
+    required: false
+    default: '30'
+  ccv2_application_code :
+    description: 'The application code within CCv2'
+    required: false
+    default: 'commerce-cloud'
+  jmeter_test_timeout :
+    description: 'The number of minutes to wait for test package to complete'
+    required: false
+    default: '1800'
+  debug :
+    description: 'Set to axios to debug connection to CCv2 (optional)'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
